@@ -4,7 +4,7 @@ import pickle
 
 # Load model & scaler
 model = pickle.load(open("music_genre_model.sav", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
+scaler = pickle.load(open("scaler.sav", "rb"))
 
 st.title("🎶 Music Genre Classifier")
 
@@ -27,3 +27,4 @@ if st.button("Predict Genre"):
     features_scaled = scaler.transform(features)
     prediction = model.predict(features_scaled)
     st.success(f"🎵 Predicted Genre: **{prediction[0]}**")
+
